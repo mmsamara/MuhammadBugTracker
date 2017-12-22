@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1C034D6-BEF3-4192-A3AA-4B51A59964D8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MuhammadBugTracker</RootNamespace>
+    <AssemblyName>MuhammadBugTracker</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44303</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\TicketAttachmentsController.cs" />
+    <Compile Include="Controllers\TicketCommentsController.cs" />
+    <Compile Include="Controllers\TicketHistoriesController.cs" />
+    <Compile Include="Controllers\TicketNotificationsController.cs" />
+    <Compile Include="Controllers\TicketPrioritiesController.cs" />
+    <Compile Include="Controllers\TicketsController.cs" />
+    <Compile Include="Controllers\TicketStatusController.cs" />
+    <Compile Include="Controllers\TicketTypesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FileUploadValidator.cs" />
+    <Compile Include="Helpers\ProjectsHelper.cs" />
+    <Compile Include="Helpers\TicketHelper.cs" />
+    <Compile Include="Helpers\UserRolesHelper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TicketAttachment.cs" />
+    <Compile Include="Models\TicketComment.cs" />
+    <Compile Include="Models\TicketHistory.cs" />
+    <Compile Include="Models\TicketNotification.cs" />
+    <Compile Include="Models\TicketPriority.cs" />
+    <Compile Include="Models\TicketStatus.cs" />
+    <Compile Include="Models\TicketType.cs" />
+    <Compile Include="NotModels\EmailModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\img\blog-bg.jpg" />
+    <Content Include="assets\img\checkbox-gray.png" />
+    <Content Include="assets\img\ControllerIcon.png" />
+    <Content Include="assets\img\instagram.jpg" />
+    <Content Include="assets\img\login-bg.jpg" />
+    <Content Include="assets\img\lorde.jpg" />
+    <Content Include="assets\img\mask.png" />
+    <Content Include="assets\img\ny.jpg" />
+    <Content Include="assets\img\product.jpg" />
+    <Content Include="assets\img\product.png" />
+    <Content Include="assets\img\profile-01.jpg" />
+    <Content Include="assets\img\profile-02.jpg" />
+    <Content Include="assets\img\radio-gray.png" />
+    <Content Include="assets\img\sort_asc.png" />
+    <Content Include="assets\img\sort_asc_disabled.png" />
+    <Content Include="assets\img\sort_both.png" />
+    <Content Include="assets\img\sort_desc.png" />
+    <Content Include="assets\img\sort_desc_disabled.png" />
+    <Content Include="assets\img\SpaceIcon.png" />
+    <Content Include="assets\img\ui-danro.jpg" />
+    <Content Include="assets\img\ui-divya.jpg" />
+    <Content Include="assets\img\ui-sam.jpg" />
+    <Content Include="assets\img\ui-sherman.jpg" />
+    <Content Include="assets\img\ui-zac.jpg" />
+    <Content Include="assets\img\weather.jpg" />
+    <Content Include="assets\img\zoom.png" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\instagram.jpg" />
+    <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="Content\style-responsive.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\table-responsive.css" />
+    <Content Include="Content\to-do.css" />
+    <Content Include="Content\zabuto_calendar.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Files\Uploads\download %281%29.jpg" />
+    <Content Include="Files\Uploads\download.jpg" />
+    <Content Include="Files\Uploads\GamingIcon.png" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\ControllerIcon.png" />
+    <Content Include="Images\sort_asc.png" />
+    <Content Include="Images\sort_asc_disabled.png" />
+    <Content Include="Images\sort_both.png" />
+    <Content Include="Images\sort_desc.png" />
+    <Content Include="Images\sort_desc_disabled.png" />
+    <Content Include="Images\blog-bg.jpg" />
+    <Content Include="Images\checkbox-gray.png" />
+    <Content Include="Images\friends\fr-01.jpg" />
+    <Content Include="Images\friends\fr-02.jpg" />
+    <Content Include="Images\friends\fr-03.jpg" />
+    <Content Include="Images\friends\fr-04.jpg" />
+    <Content Include="Images\friends\fr-05.jpg" />
+    <Content Include="Images\friends\fr-06.jpg" />
+    <Content Include="Images\friends\fr-07.jpg" />
+    <Content Include="Images\friends\fr-08.jpg" />
+    <Content Include="Images\friends\fr-09.jpg" />
+    <Content Include="Images\friends\fr-10.jpg" />
+    <Content Include="Images\friends\fr-11.jpg" />
+    <Content Include="Images\instagram.jpg" />
+    <Content Include="Images\login-bg.jpg" />
+    <Content Include="Images\lorde.jpg" />
+    <Content Include="Images\mask.png" />
+    <Content Include="Images\ny.jpg" />
+    <Content Include="Images\portfolio\port01.jpg" />
+    <Content Include="Images\portfolio\port02.jpg" />
+    <Content Include="Images\portfolio\port03.jpg" />
+    <Content Include="Images\portfolio\port04.jpg" />
+    <Content Include="Images\portfolio\port05.jpg" />
+    <Content Include="Images\portfolio\port06.jpg" />
+    <Content Include="Images\product.jpg" />
+    <Content Include="Images\product.png" />
+    <Content Include="Images\profile-01.jpg" />
+    <Content Include="Images\profile-02.jpg" />
+    <Content Include="Images\radio-gray.png" />
+    <Content Include="Images\SpaceIcon.png" />
+    <Content Include="Images\ui-danro.jpg" />
+    <Content Include="Images\ui-divya.jpg" />
+    <Content Include="Images\ui-sam.jpg" />
+    <Content Include="Images\ui-sherman.jpg" />
+    <Content Include="Images\ui-zac.jpg" />
+    <Content Include="Images\weather.jpg" />
+    <Content Include="Images\zoom.png" />
+    <Content Include="lineicons\fonts\linecons.svg" />
+    <Content Include="lineicons\index.html" />
+    <Content Include="lineicons\lte-ie7.js" />
+    <Content Include="lineicons\style.css" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\column_render.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\complex_header.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\defaults.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\dom_multiple_elements.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\dom_toolbar.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\dt_events.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\events_live.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\events_post_init.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\events_pre_init.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\footer_callback.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\highlight.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\html_sort.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\language_file.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\length_menu.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\localstorage.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\row_callback.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\row_grouping.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\advanced_init\sorting_control.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\ajax.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\custom_data_property.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\deep.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\defer_render.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\null_data_source.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\objects.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\objects_subarrays.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\sources\arrays.txt" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\sources\arrays_subobjects.txt" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\sources\array_only.txt" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\sources\custom_prop.txt" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\sources\deep.txt" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\sources\objects.txt" />
+    <Content Include="Scripts\js\advanced-datatable\examples\ajax\sources\objects_subarrays.txt" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\add_row.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\api_in_init.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\counter_column.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\editable.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\form.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\highlight.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\multi_filter.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\multi_filter_select.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\regex.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\row_details.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\select_row.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\select_single_row.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\show_hide.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\api\tabs_and_scrolling.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\alt_pagination.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\base.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\base_themeroller.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\complex_header.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\dom.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\filter_only.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\flexible_width.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\hidden_columns.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\language.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\multiple_tables.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\multi_col_sort.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\scroll_x.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\scroll_xy.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\scroll_y.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\scroll_y_infinite.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\scroll_y_theme.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\state_save.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\table_sorting.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\themes.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\basic_init\zero_config.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\data_sources\ajax.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\data_sources\dom.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\data_sources\js_array.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\data_sources\server_side.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\data.sql" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\details_close.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\details_open.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\de_DE.txt" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\editable_ajax.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\index.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\infiniteScroll.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\jquery-ui-tabs.js" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\jquery.jeditable.js" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\jquery.tooltip.css" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\jquery.tooltip.js" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\syntax\css\shCore.css" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\syntax\images\arrow.jpg" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\syntax\images\extended.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\syntax\js\shCore.js" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\smoothness\jquery-ui-1.8.4.custom.css" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\themes\ui-lightness\jquery-ui-1.8.4.custom.css" />
+    <Content Include="Scripts\js\advanced-datatable\examples\index.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\plug-ins\dom_sort.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\plug-ins\html_sort.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\plug-ins\paging_plugin.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\plug-ins\plugin_api.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\plug-ins\range_filtering.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\plug-ins\sorting_plugin.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\plug-ins\sorting_sType.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\custom_vars.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\defer_loading.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\editable.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\ids.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\jsonp.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\object_data.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\pipeline.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\post.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\row_details.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\custom_data_property.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\details_col.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\filter_col.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\id.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\id_jsonp.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\jsonp.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\objects.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\objects_jsonp.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\post.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\scripts\server_processing.php" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\select_rows.html" />
+    <Content Include="Scripts\js\advanced-datatable\examples\server_side\server_side.html" />
+    <Content Include="Scripts\js\advanced-datatable\media\css\demo_page.css" />
+    <Content Include="Scripts\js\advanced-datatable\media\css\demo_table.css" />
+    <Content Include="Scripts\js\advanced-datatable\media\css\demo_table_jui.css" />
+    <Content Include="Scripts\js\advanced-datatable\media\css\DT_bootstrap.css" />
+    <Content Include="Scripts\js\advanced-datatable\media\css\jquery.dataTables.css" />
+    <Content Include="Scripts\js\advanced-datatable\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\back_disabled.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\back_enabled.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\back_enabled_hover.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\favicon.ico" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\forward_disabled.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\forward_enabled.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\forward_enabled_hover.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\sort_asc.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\sort_both.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\sort_desc.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\js\advanced-datatable\media\js\DT_bootstrap.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\js\jquery.dataTables.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\js\jquery.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\api\api.internal.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\api\api.methods.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\api\api.static.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.ajax.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.columns.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.constructor.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.data.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.draw.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.filter.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.info.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.init.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.length.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.page.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.processing.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.scrolling.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.sizing.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.sort.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.state.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\core\core.support.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\DataTables.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\ext\ext.classes.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\ext\ext.paging.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\ext\ext.sorting.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\ext\ext.types.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\model\model.column.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\model\model.defaults.columns.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\model\model.defaults.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\model\model.ext.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\model\model.row.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\model\model.search.js" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\model\model.settings.js" />
+    <Content Include="Scripts\js\advanced-form-components.js" />
+    <Content Include="Scripts\js\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Scripts\js\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Scripts\js\bootstrap-daterangepicker\date.js" />
+    <Content Include="Scripts\js\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Scripts\js\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Scripts\js\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Scripts\js\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="Scripts\js\bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="Scripts\js\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\js\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="Scripts\js\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="Scripts\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="Scripts\js\bootstrap-switch.js" />
+    <Content Include="Scripts\js\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="Scripts\js\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Scripts\js\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="Scripts\js\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="Scripts\js\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\calendar-conf-events.js" />
+    <Content Include="Scripts\js\chart-master\Chart.js" />
+    <Content Include="Scripts\js\chartjs-conf.js" />
+    <Content Include="Scripts\js\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\js\common-scripts.js" />
+    <Content Include="Scripts\js\dropzone\css\dropzone.css" />
+    <Content Include="Scripts\js\dropzone\dropzone.js" />
+    <Content Include="Scripts\js\dropzone\images\spritemap%402x.png" />
+    <Content Include="Scripts\js\dropzone\images\spritemap.png" />
+    <Content Include="Scripts\js\easy-pie-chart.js" />
+    <Content Include="Scripts\js\fancybox\jquery.fancybox.css" />
+    <Content Include="Scripts\js\fancybox\jquery.fancybox.js" />
+    <Content Include="Scripts\js\file-uploader\css\jquery.fileupload-noscript.css" />
+    <Content Include="Scripts\js\file-uploader\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Scripts\js\file-uploader\css\jquery.fileupload-ui.css" />
+    <Content Include="Scripts\js\file-uploader\css\jquery.fileupload.css" />
+    <Content Include="Scripts\js\file-uploader\img\loading.gif" />
+    <Content Include="Scripts\js\file-uploader\img\progressbar.gif" />
+    <Content Include="Scripts\js\file-uploader\js\cors\jquery.xdr-transport.js" />
+    <Content Include="Scripts\js\file-uploader\js\jquery.fileupload-audio.js" />
+    <Content Include="Scripts\js\file-uploader\js\jquery.fileupload-image.js" />
+    <Content Include="Scripts\js\file-uploader\js\jquery.fileupload-process.js" />
+    <Content Include="Scripts\js\file-uploader\js\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\js\file-uploader\js\jquery.fileupload-validate.js" />
+    <Content Include="Scripts\js\file-uploader\js\jquery.fileupload-video.js" />
+    <Content Include="Scripts\js\file-uploader\js\jquery.fileupload.js" />
+    <Content Include="Scripts\js\file-uploader\js\jquery.iframe-transport.js" />
+    <Content Include="Scripts\js\file-uploader\js\main.js" />
+    <Content Include="Scripts\js\file-uploader\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Scripts\js\flotchart-conf.js" />
+    <Content Include="Scripts\js\flot\jquery.flot.crosshair.js" />
+    <Content Include="Scripts\js\flot\jquery.flot.js" />
+    <Content Include="Scripts\js\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\js\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\js\flot\jquery.flot.stack.js" />
+    <Content Include="Scripts\js\form-component.js" />
+    <Content Include="Scripts\js\form-validation-script.js" />
+    <Content Include="Scripts\js\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Scripts\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\js\google-maps\data\points.js" />
+    <Content Include="Scripts\js\google-maps\maplace.js" />
+    <Content Include="Scripts\js\gritter-conf.js" />
+    <Content Include="Scripts\js\gritter\css\jquery.gritter.css" />
+    <Content Include="Scripts\js\gritter\css\jquery.gritter0.css" />
+    <Content Include="Scripts\js\gritter\images\gritter-light.png" />
+    <Content Include="Scripts\js\gritter\images\gritter-long.png" />
+    <Content Include="Scripts\js\gritter\images\gritter.png" />
+    <Content Include="Scripts\js\gritter\images\ie-spacer.gif" />
+    <Content Include="Scripts\js\gritter\js\jquery.gritter.js" />
+    <Content Include="Scripts\js\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\js\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="Scripts\js\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Scripts\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Scripts\js\jquery.backstretch.min.js" />
+    <Content Include="Scripts\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Scripts\js\jquery.js" />
+    <Content Include="Scripts\js\jquery.nicescroll.js" />
+    <Content Include="Scripts\js\jquery.scrollTo.min.js" />
+    <Content Include="Scripts\js\jquery.sparkline.js" />
+    <Content Include="Scripts\js\jquery.tagsinput.js" />
+    <Content Include="Scripts\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Scripts\js\morris-conf.js" />
+    <Content Include="Scripts\js\sparkline-chart.js" />
+    <Content Include="Scripts\js\tasks.js" />
+    <Content Include="Scripts\js\xchart\d3.v3.min.js" />
+    <Content Include="Scripts\js\xchart\xcharts.css" />
+    <Content Include="Scripts\js\xchart\xcharts.min.js" />
+    <Content Include="Scripts\js\zabuto_calendar.js" />
+    <Content Include="SpaceIcon.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="private.config" />
+    <Content Include="Content\.DS_Store" />
+    <Content Include="Images\.DS_Store" />
+    <Content Include="Images\friends\.DS_Store" />
+    <Content Include="Images\portfolio\.DS_Store" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="lineicons\.DS_Store" />
+    <Content Include="lineicons\fonts\.DS_Store" />
+    <Content Include="lineicons\fonts\linecons.eot" />
+    <Content Include="lineicons\fonts\linecons.ttf" />
+    <Content Include="lineicons\fonts\linecons.woff" />
+    <None Include="Properties\PublishProfiles\msamara-bugtracker - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\msamara-bugtracker - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Tickets\Create.cshtml" />
+    <Content Include="Views\Tickets\Delete.cshtml" />
+    <Content Include="Views\Tickets\Details.cshtml" />
+    <Content Include="Views\Tickets\Edit.cshtml" />
+    <Content Include="Views\Tickets\Index.cshtml" />
+    <Content Include="Views\TicketAttachments\Create.cshtml" />
+    <Content Include="Views\TicketAttachments\Delete.cshtml" />
+    <Content Include="Views\TicketAttachments\Details.cshtml" />
+    <Content Include="Views\TicketAttachments\Edit.cshtml" />
+    <Content Include="Views\TicketAttachments\Index.cshtml" />
+    <Content Include="Views\TicketComments\Create.cshtml" />
+    <Content Include="Views\TicketComments\Delete.cshtml" />
+    <Content Include="Views\TicketComments\Details.cshtml" />
+    <Content Include="Views\TicketComments\Edit.cshtml" />
+    <Content Include="Views\TicketComments\Index.cshtml" />
+    <Content Include="Views\TicketHistories\Create.cshtml" />
+    <Content Include="Views\TicketHistories\Delete.cshtml" />
+    <Content Include="Views\TicketHistories\Details.cshtml" />
+    <Content Include="Views\TicketHistories\Edit.cshtml" />
+    <Content Include="Views\TicketHistories\Index.cshtml" />
+    <Content Include="Views\TicketNotifications\Create.cshtml" />
+    <Content Include="Views\TicketNotifications\Delete.cshtml" />
+    <Content Include="Views\TicketNotifications\Details.cshtml" />
+    <Content Include="Views\TicketNotifications\Edit.cshtml" />
+    <Content Include="Views\TicketNotifications\Index.cshtml" />
+    <Content Include="Views\TicketPriorities\Create.cshtml" />
+    <Content Include="Views\TicketPriorities\Delete.cshtml" />
+    <Content Include="Views\TicketPriorities\Details.cshtml" />
+    <Content Include="Views\TicketPriorities\Edit.cshtml" />
+    <Content Include="Views\TicketPriorities\Index.cshtml" />
+    <Content Include="Views\TicketStatus\Create.cshtml" />
+    <Content Include="Views\TicketStatus\Delete.cshtml" />
+    <Content Include="Views\TicketStatus\Details.cshtml" />
+    <Content Include="Views\TicketStatus\Edit.cshtml" />
+    <Content Include="Views\TicketStatus\Index.cshtml" />
+    <Content Include="Views\TicketTypes\Create.cshtml" />
+    <Content Include="Views\TicketTypes\Delete.cshtml" />
+    <Content Include="Views\TicketTypes\Details.cshtml" />
+    <Content Include="Views\TicketTypes\Edit.cshtml" />
+    <Content Include="Views\TicketTypes\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Admin\ProjectAssign.cshtml" />
+    <Content Include="Views\Admin\RoleAssign.cshtml" />
+    <Content Include="Views\Admin\UserIndex.cshtml" />
+    <Content Include="Views\Account\ResendEmailConfirmation.cshtml" />
+    <Content Include="Views\Account\ConfirmationSent.cshtml" />
+    <Content Include="Views\Home\Sent.cshtml" />
+    <Content Include="Views\Manage\ChangeName.cshtml" />
+    <Content Include="Scripts\js\.DS_Store" />
+    <Content Include="Scripts\js\advanced-datatable\.DS_Store" />
+    <Content Include="Scripts\js\advanced-datatable\examples\.DS_Store" />
+    <Content Include="Scripts\js\advanced-datatable\examples\data_sources\.DS_Store" />
+    <Content Include="Scripts\js\advanced-datatable\examples\examples_support\syntax\license\Syntax Highlighter" />
+    <Content Include="Scripts\js\advanced-datatable\media\.DS_Store" />
+    <Content Include="Scripts\js\advanced-datatable\media\css\.DS_Store" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\.DS_Store" />
+    <Content Include="Scripts\js\advanced-datatable\media\images\Sorting icons.psd" />
+    <Content Include="Scripts\js\advanced-datatable\media\js\.DS_Store" />
+    <Content Include="Scripts\js\advanced-datatable\media\src\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-datepicker\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-datepicker\css\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-datepicker\js\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-daterangepicker\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-datetimepicker\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-datetimepicker\css\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-datetimepicker\js\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-fileupload\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-inputmask\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-timepicker\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-timepicker\compiled\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-timepicker\js\.DS_Store" />
+    <Content Include="Scripts\js\bootstrap-wysihtml5\.DS_Store" />
+    <Content Include="Scripts\js\chart-master\.DS_Store" />
+    <Content Include="Scripts\js\ckeditor\.DS_Store" />
+    <Content Include="Scripts\js\dropzone\.DS_Store" />
+    <Content Include="Scripts\js\dropzone\css\.DS_Store" />
+    <Content Include="Scripts\js\dropzone\images\.DS_Store" />
+    <Content Include="Scripts\js\fancybox\.DS_Store" />
+    <Content Include="Scripts\js\file-uploader\.DS_Store" />
+    <Content Include="Scripts\js\file-uploader\css\.DS_Store" />
+    <Content Include="Scripts\js\file-uploader\img\.DS_Store" />
+    <Content Include="Scripts\js\file-uploader\js\.DS_Store" />
+    <Content Include="Scripts\js\file-uploader\js\cors\.DS_Store" />
+    <Content Include="Scripts\js\file-uploader\js\vendor\.DS_Store" />
+    <Content Include="Scripts\js\flot\.DS_Store" />
+    <Content Include="Scripts\js\fullcalendar\.DS_Store" />
+    <Content Include="Scripts\js\google-maps\.DS_Store" />
+    <Content Include="Scripts\js\google-maps\data\.DS_Store" />
+    <Content Include="Scripts\js\gritter\.DS_Store" />
+    <Content Include="Scripts\js\gritter\css\.DS_Store" />
+    <Content Include="Scripts\js\gritter\images\.DS_Store" />
+    <Content Include="Scripts\js\gritter\js\.DS_Store" />
+    <Content Include="Scripts\js\jquery-easy-pie-chart\.DS_Store" />
+    <Content Include="Scripts\js\xchart\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39412</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44303/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

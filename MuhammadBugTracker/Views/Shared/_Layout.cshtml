@@ -1,0 +1,409 @@
+﻿@using MuhammadBugTracker.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samara Bug Tracker</title>
+    
+    <!--Fav Icon-->
+    <link rel="icon" type="image/png" href="~/Images/SpaceIcon.png" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="~/Scripts/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="~/lineicons/style.css">
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/style.css" rel="stylesheet">
+    <link href="~/Content/style-responsive.css" rel="stylesheet">
+
+    <script src="~/Scripts/js/chart-master/Chart.js"></script>
+
+    
+
+</head>
+<body>
+    <!--header start-->
+    <header class="header black-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <!--logo start-->
+        <a href=@Url.Action("Index", "Home") class="logo"><b>SAMARA BUG TRACKER</b></a>
+        <!--logo end-->
+        <div class="nav notify-row" id="top_menu">
+            <!--  notification start -->
+            <ul class="nav top-menu">
+                <!-- settings start -->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <i class="fa fa-tasks"></i>
+                        <span class="badge bg-theme">4</span>
+                    </a>
+                    <ul class="dropdown-menu extended tasks-bar">
+                        <div class="notify-arrow notify-arrow-green"></div>
+                        <li>
+                            <p class="green">You have 4 pending tasks</p>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <div class="task-info">
+                                    <div class="desc">DashGum Admin Panel</div>
+                                    <div class="percent">40%</div>
+                                </div>
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                        <span class="sr-only">40% Complete (success)</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <div class="task-info">
+                                    <div class="desc">Database Update</div>
+                                    <div class="percent">60%</div>
+                                </div>
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                        <span class="sr-only">60% Complete (warning)</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <div class="task-info">
+                                    <div class="desc">Product Development</div>
+                                    <div class="percent">80%</div>
+                                </div>
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="sr-only">80% Complete</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <div class="task-info">
+                                    <div class="desc">Payments Sent</div>
+                                    <div class="percent">70%</div>
+                                </div>
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                        <span class="sr-only">70% Complete (Important)</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="external">
+                            <a href="#">See All Tasks</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- settings end -->
+                <!-- inbox dropdown start-->
+                <li id="header_inbox_bar" class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="badge bg-theme">5</span>
+                    </a>
+                    <ul class="dropdown-menu extended inbox">
+                        <div class="notify-arrow notify-arrow-green"></div>
+                        <li>
+                            <p class="green">You have 5 new messages</p>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
+                                <span class="subject">
+                                    <span class="from">Zac Snider</span>
+                                    <span class="time">Just now</span>
+                                </span>
+                                <span class="message">
+                                    Hi mate, how is everything?
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
+                                <span class="subject">
+                                    <span class="from">Divya Manian</span>
+                                    <span class="time">40 mins.</span>
+                                </span>
+                                <span class="message">
+                                    Hi, I need your help with this.
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
+                                <span class="subject">
+                                    <span class="from">Dan Rogers</span>
+                                    <span class="time">2 hrs.</span>
+                                </span>
+                                <span class="message">
+                                    Love your new Dashboard.
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
+                                <span class="subject">
+                                    <span class="from">Dj Sherman</span>
+                                    <span class="time">4 hrs.</span>
+                                </span>
+                                <span class="message">
+                                    Please, answer asap.
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#">See all messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- inbox dropdown end -->
+            </ul>
+            <!--  notification end -->
+        </div>
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li><a class="logout" href=@Url.Action("Register", "Account")>Register</a></li>
+                    <li><a class="logout" href=@Url.Action("Login","Account")>Log In</a></li>
+                }
+                else
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <ul class="nav pull-right top-menu"><li><a class="logout" href="javascript:document.getElementById('logoutForm').submit()">Log Out</a></li></ul>
+                    }
+                }
+            </ul>
+        </div>
+    </header>
+    <!--header end-->
+  
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+
+                <p class="centered"><a href="profile.html"><img src="~/Images/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <h5 class="centered">@HttpContext.Current.User.Identity.Name</h5>
+                    <h5 class="centered">@User.Identity.Name</h5>
+                }
+                else
+                {
+                    <h5 class="centered">Guest User</h5>
+                }
+                <li class="mt">
+                    <a class="active" href=@Url.Action("Index", "Home")>
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=@Url.Action("Contact", "Home")>
+                        <i class="fa fa-envelope"></i>
+                        <span>Contact </span>
+                    </a>
+                </li>
+                <li class="sub-menu">
+                    <a href=@Url.Action("UserIndex", "Admin")>
+                        <i class="fa fa-users"></i>
+                        <span>User Index</span>
+                    </a>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Projects</span>
+                    </a>
+                    <ul class="sub">
+                        @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("MyIndex", "Projects")>My Projects</a></li>
+                        }
+                        @if (User.IsInRole("Admin") || User.IsInRole("ProjectManager"))
+                        {
+                            <li><a href=@Url.Action("Index", "Projects")>All Projects</a></li>
+                        }
+                        else if(!User.Identity.IsAuthenticated)
+                        {
+                            <li><a href=@Url.Action("Login", "Account")>Log in to view projects!</a></li>
+                        }
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-bug"></i>
+                        <span>Tickets</span>
+                    </a>
+                    <ul class="sub">
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li><a href=@Url.Action("Login", "Account")>Log in to view tickets!</a></li>
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("Index", "Tickets")>All Tickets</a></li>
+                        }
+                        @if (User.IsInRole("Submitter"))
+                        {
+                            <li><a href=@Url.Action("OwnedTicketIndex", "Tickets")>My Owned Tickets</a></li>
+                            <li><a href=@Url.Action("Create", "Tickets")>Create Ticket</a></li>
+                        }
+                        @if (User.IsInRole("ProjectManager"))
+                        {
+                            <li><a href=@Url.Action("ProjectTicketIndex", "Tickets")>My Project Tickets</a></li>
+                        }
+                        @if (User.IsInRole("Developer"))
+                        {
+                            <li><a href=@Url.Action("MyIndex", "Tickets")>My Tickets</a></li>
+                        }
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-comment"></i>
+                        <span>Ticket Comments</span>
+                    </a>
+                    <ul class="sub">
+                        @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("MyIndex", "TicketComments")>My Ticket Comments</a></li>
+                        }
+                        else if (User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("Index", "TicketComments")>All Ticket Comments</a></li>
+                        }
+                        else if (!User.Identity.IsAuthenticated)
+                        {
+                            <li><a href=@Url.Action("Login", "Account")>Log in to view comments!</a></li>
+                        }
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-paperclip"></i>
+                        <span>Ticket Attachments</span>
+                    </a>
+                    <ul class="sub">
+                        @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("MyIndex", "TicketAttachments")>My Ticket Attachments</a></li>
+                        }
+                        else if (User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("Index", "TicketAttachments")>All Ticket Attachments</a></li>
+                        }
+                        else if (!User.Identity.IsAuthenticated)
+                        {
+                            <li><a href=@Url.Action("Login", "Account")>Log in to view attachments!</a></li>
+                        }
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-clock-o"></i>
+                        <span>Ticket Histories</span>
+                    </a>
+                    <ul class="sub">
+                        @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("MyIndex", "TicketHistories")>My Ticket Histories</a></li>
+                        }
+                        else if (User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("Index", "TicketHistories")>All Ticket Histories</a></li>
+                        }
+                        else if (!User.Identity.IsAuthenticated)
+                        {
+                            <li><a href=@Url.Action("Login", "Account")>Log in to view histories!</a></li>
+                        }
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-globe"></i>
+                        <span>Ticket Notifications</span>
+                        <span class="label label-theme pull-right mail-info">2 </span>
+                    </a>
+                    <ul class="sub">
+                        @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("MyIndex", "TicketNotifications")>My Ticket Notifications</a></li>
+                        }
+                        else if (User.IsInRole("Admin"))
+                        {
+                            <li><a href=@Url.Action("Index", "TicketNotifications")>All Ticket Notifications</a></li>
+                        }
+                        else if (!User.Identity.IsAuthenticated)
+                        {
+                            <li><a href=@Url.Action("Login", "Account")>Log in to view notifications!</a></li>
+                        }
+                    </ul>
+                </li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+    <section id="main-content">
+        <section class="wrapper">
+            @RenderBody()
+        </section>
+    </section>
+        <hr />
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                @DateTime.Now.Year - Using DASHGUM Template by C. Alvarez - Site by Muhammad Samara
+                <a href="#top" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <!--Template Scripts-->
+    <script class="include" type="text/javascript" src="~/Scripts/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Scripts/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Scripts/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="~/Scripts/js/jquery.sparkline.js"></script>
+
+    <script src="~/Scripts/js/common-scripts.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/gritter-conf.js"></script>
+
+    <script>
+
+        $('.table').DataTable();
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
